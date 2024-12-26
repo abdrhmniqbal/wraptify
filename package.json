@@ -13,7 +13,7 @@
     "hugeicons-react": "^0.3.0",
     "justd-icons": "^1.10.8",
     "next": "15.1.2",
-    "next-auth": "^4.24.11",
+    "next-auth": "^5.0.0-beta.25",
     "react": "^19.0.0",
     "react-aria-components": "^1.5.0",
     "react-dom": "^19.0.0",
