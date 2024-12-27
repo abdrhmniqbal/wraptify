@@ -1,4 +1,4 @@
-import Header from '@/components/blocks/header'
+import PageHeader from '@/components/blocks/page-header'
 import HomeCard from '@/components/blocks/home-card'
 import { auth } from '@/lib/auth'
 import { MusicNote01Icon } from 'hugeicons-react'
@@ -16,7 +16,7 @@ export default async function Generate() {
   ]
   return (
     <>
-      <Header
+      <PageHeader
         title={`Hello, ${session?.user.name}!`}
         description="What would you wrap now?"
       />
