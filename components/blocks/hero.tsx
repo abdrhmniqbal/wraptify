@@ -3,36 +3,42 @@
 import { buttonStyles } from 'ui'
 import Link from 'next/link'
 import { ArrowRight01Icon, Github01Icon } from 'hugeicons-react'
+import { cn } from '@/lib/utils/classes'
 
-const Hero = () => (
-  <div className="container mx-auto max-w-4xl space-y-5 py-20 text-center">
-    <h2 className="text-primary mx-auto py-2 text-center text-4xl font-black tracking-tight md:text-5xl lg:text-6xl">
-      Wrap your spotify
-      <br />
-      <span className="mt-1 inline-flex h-10 bg-gradient-to-r from-[#9867F0] to-[#ED4E50] bg-clip-text pb-2 text-transparent sm:h-14 lg:h-[4.125rem]">
-        anytime you want.
-      </span>
-    </h2>
-    <p className="text-accent-foreground mx-auto max-w-xl">
-      The ultimate way to wrap your spotify without waiting end of the year.
-      Generate your wrapped list now.
-    </p>
-    <div className="flex items-center justify-center gap-x-3 font-medium">
-      <Link
-        href="https://github.com/iblabd/wraptify"
-        target="blank"
-        passHref
-        className={buttonStyles({ appearance: 'outline' })}
-      >
-        <Github01Icon data-slot="Icon" />
-        <span>Star on Github</span>
-      </Link>
-      <Link href="/generate" className={buttonStyles()}>
-        <span>Wrap Your Spotify</span>
-        <ArrowRight01Icon data-slot="icon" />
-      </Link>
+export default function Hero() {
+  return (
+    <div className="container mx-auto max-w-4xl space-y-8 py-20 text-center">
+      <h2 className="text-primary mx-auto py-2 text-center text-4xl font-black tracking-tight md:text-5xl lg:text-6xl">
+        Wrap your Spotify
+        <br />
+        <span className="mt-1 inline-flex bg-gradient-to-r from-[#9867F0] to-[#ED4E50] bg-clip-text leading-12 text-transparent md:leading-20">
+          anytime you want.
+        </span>
+      </h2>
+      <p className="text-accent-foreground mx-auto max-w-xl">
+        The ultimate way to wrap your spotify without waiting end of the year.
+      </p>
+      <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <Link
+          href="https://github.com/abdrhmniqbal/wraptify"
+          target="blank"
+          passHref
+          className={cn(
+            buttonStyles({ appearance: 'outline' }),
+            'w-full sm:w-fit',
+          )}
+        >
+          <Github01Icon data-slot="Icon" />
+          <span>Star on Github</span>
+        </Link>
+        <Link
+          href="/generate"
+          className={cn(buttonStyles(), 'w-full sm:w-fit')}
+        >
+          <span>Get Your List Now</span>
+          <ArrowRight01Icon data-slot="icon" />
+        </Link>
+      </div>
     </div>
-  </div>
-)
-
-export default Hero
+  )
+}
