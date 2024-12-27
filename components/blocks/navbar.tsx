@@ -59,9 +59,10 @@ export default function Navbar() {
                   </Modal.Trigger>
                   <Modal.Content role="alertdialog">
                     <Modal.Header>
-                      <Modal.Title>Logout from your account?</Modal.Title>
+                      <Modal.Title>Confirm Logout</Modal.Title>
                       <Modal.Description>
-                        This will deleting all unsaved changes.
+                        Logging out will discard unsaved changes. Are you sure
+                        want to proceed?
                       </Modal.Description>
                     </Modal.Header>
                     <Modal.Footer className="flex justify-end">
@@ -71,7 +72,7 @@ export default function Navbar() {
                         intent="danger"
                         onPress={() => signOut()}
                       >
-                        Yes, logout
+                        Log Out Anyway
                       </Modal.Close>
                     </Modal.Footer>
                   </Modal.Content>
