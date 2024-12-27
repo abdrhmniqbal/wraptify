@@ -10,12 +10,15 @@
     "format": "prettier --write \"**/*.{ts,tsx,mdx,md,js,jsx,json,css}\" --cache"
   },
   "dependencies": {
+    "@radix-ui/react-aspect-ratio": "^1.1.1",
+    "html2canvas": "^1.4.1",
     "hugeicons-react": "^0.3.0",
     "justd-icons": "^1.10.8",
     "next": "15.1.2",
     "next-auth": "^5.0.0-beta.25",
     "react": "^19.0.0",
     "react-aria-components": "^1.5.0",
+    "react-device-frameset": "^1.3.4",
     "react-dom": "^19.0.0",
     "sonner": "^1.7.1"
   },

@@ -1,7 +1,7 @@
 'use client'
 
 import { useTheme } from '@/components/theme-provider'
-import { cn } from '@/utils/classes'
+import { cn } from '@/lib/utils/classes'
 import {
   IconCircleCheckFill,
   IconCircleExclamationFill,

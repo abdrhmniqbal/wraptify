@@ -191,11 +191,16 @@
     content: '';
     background-image: url(/images/grid.svg);
     position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     opacity: 0.03;
     z-index: -2;
+    filter: var(--tw-filter);
+  }
+
+  .dark .homepage::before {
+    filter: invert(1);
   }
 }

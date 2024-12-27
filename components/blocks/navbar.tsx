@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from '@/utils/classes'
+import { cn } from '@/lib/utils/classes'
 import { buttonStyles, Modal } from 'ui'
 import NavHeader from './nav-header'
 import { signOut, useSession } from 'next-auth/react'

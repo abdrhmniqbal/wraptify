@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from '@/utils/classes'
+import { cn } from '@/lib/utils/classes'
 import { IconLoader } from 'justd-icons'
 import { ProgressBar } from 'react-aria-components'
 import type { VariantProps } from 'tailwind-variants'
