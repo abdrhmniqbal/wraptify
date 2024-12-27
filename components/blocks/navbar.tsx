@@ -1,7 +1,7 @@
 'use client'
 
 import { cn } from '@/lib/utils/classes'
-import { buttonStyles, Modal } from 'ui'
+import { buttonStyles, Container, Modal } from 'ui'
 import NavHeader from './nav-header'
 import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
@@ -13,37 +13,47 @@ export default function Navbar() {
 
   const navigation = [{ name: 'Generate', href: '/generate' }]
   return (
-    <header className="relative">
-      <div className="container md:hidden">
+    <header className="relative mt-2">
+      <div className="md:hidden">
         <NavHeader state={state} onPress={() => setState(!state)} />
       </div>
       <nav
-        className={`pb-5 md:static md:block md:text-sm ${state ? 'bg-bg absolute inset-x-4 top-2 z-20 rounded-xl border shadow-lg md:border-none md:shadow-none' : 'hidden'}`}
+        className={`w-full pb-5 md:static md:block md:text-sm ${state ? 'bg-bg absolute top-2 z-20 rounded-xl border shadow-lg md:border-none md:shadow-none' : 'hidden'}`}
       >
-        <div className="lg:container-lg container items-center gap-x-20 md:flex">
+        <Container className="w-full items-center gap-x-20 md:flex">
           <NavHeader state={state} onPress={() => setState(!state)} />
           <div
-            className={`text-accent-fg mt-8 flex-1 items-center md:mt-0 md:flex md:font-medium ${state ? 'block' : 'hidden'} `}
+            className={`text-accent-fg mt-2 flex-1 items-center md:mt-0 md:flex md:font-medium ${state ? 'block' : 'hidden'} `}
           >
-            <ul className="items-center justify-center space-y-6 md:flex md:space-y-0 md:space-x-6">
+            <ul className="items-center justify-center space-y-2 md:flex md:space-y-0 md:space-x-6">
               {navigation.map((item, idx) => {
                 return (
-                  <li key={idx} className="hover:text-accent-fg/80">
-                    <Link href={item.href} className="block" scroll={false}>
+                  <li key={idx}>
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        buttonStyles({ appearance: 'plain' }),
+                        'justify-start md:justify-center',
+                        'hover:bg-secondary',
+                      )}
+                      scroll={false}
+                    >
                       {item.name}
                     </Link>
                   </li>
                 )
               })}
             </ul>
-            <div className="mt-6 flex-1 items-center justify-end gap-x-6 space-y-6 md:mt-0 md:flex md:space-y-0">
+            <div className="mt-2 flex-1 items-center justify-end gap-x-6 md:mt-0 md:flex md:space-y-0">
               {status === 'authenticated' ? (
                 <Modal>
                   <Modal.Trigger
-                    className={buttonStyles({
-                      appearance: 'plain',
-                      size: 'small',
-                    })}
+                    className={cn(
+                      buttonStyles({
+                        appearance: 'plain',
+                      }),
+                      'w-full justify-start md:w-fit md:justify-center',
+                    )}
                   >
                     Logout
                   </Modal.Trigger>
@@ -79,7 +89,7 @@ export default function Navbar() {
               )}
             </div>
           </div>
-        </div>
+        </Container>
       </nav>
     </header>
   )

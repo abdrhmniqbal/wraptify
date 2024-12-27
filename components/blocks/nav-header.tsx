@@ -13,20 +13,19 @@ export default function NavHeader({ onPress, state }: NavHeaderProps) {
       <Link href="/">
         <div className="text-xl font-bold">Wraptify</div>
       </Link>
-      <div className="md:hidden">
-        <Button
-          appearance="plain"
-          size="square-petite"
-          aria-label="Open the menu"
-          onPress={onPress}
-        >
-          {state ? (
-            <Cancel01Icon className="size-6" data-slot="icon" strokeWidth={2} />
-          ) : (
-            <Menu01Icon className="size-6" data-slot="icon" strokeWidth={2} />
-          )}
-        </Button>
-      </div>
+      <Button
+        appearance="plain"
+        size="square-petite"
+        aria-label="Open the menu"
+        onPress={onPress}
+        className="md:hidden"
+      >
+        {state ? (
+          <Cancel01Icon className="size-6" data-slot="icon" strokeWidth={2} />
+        ) : (
+          <Menu01Icon className="size-6" data-slot="icon" strokeWidth={2} />
+        )}
+      </Button>
     </div>
   )
 }
