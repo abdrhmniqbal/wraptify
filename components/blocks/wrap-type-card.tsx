@@ -5,23 +5,23 @@ import Link from 'next/link'
 import { ArrowRight01Icon } from 'hugeicons-react'
 import type React from 'react'
 
-interface HomeCardProps {
+interface WrapTypeCardProps {
   title: string
   description: string
-  icon: React.FC<React.HTMLAttributes<SVGElement>>
+  icon: React.FC<React.SVGProps<SVGSVGElement>>
   href: string
   query: {
     time_period: string
   }
 }
 
-export default function HomeCard({
+export default function WrapTypeCard({
   title,
   description,
   icon: Icon,
   href,
   query,
-}: HomeCardProps) {
+}: WrapTypeCardProps) {
   const color = generateColorScheme()
   return (
     <Link
@@ -33,18 +33,16 @@ export default function HomeCard({
       <Card className="group hover:border-primary hover:bg-secondary">
         <Card.Header>
           <Button size="square-petite" className="mb-1">
-            <Icon className="size-4" />
+            <Icon className="size-4" strokeWidth={2} />
           </Button>
-          <Card.Title className="group-hover:text-secondary-foreground scroll-m-20 text-2xl font-semibold tracking-tight">
-            {title}
-          </Card.Title>
-          <div className="text-accent-foreground group-hover:text-foreground">
+          <Card.Title>{title}</Card.Title>
+          <Card.Description className="text-muted-fg group-hover:text-fg">
             {description}
-          </div>
-          <Card.Description className="text-muted-foreground group-hover:text-primary flex items-center">
+          </Card.Description>
+          <Card.Content className="text-fg group-hover:text-primary flex items-center p-0 pt-2 text-sm">
             <span>Generate now</span>
             <ArrowRight01Icon className="ml-1 size-3 transition-all group-hover:ml-2" />
-          </Card.Description>
+          </Card.Content>
         </Card.Header>
       </Card>
     </Link>
