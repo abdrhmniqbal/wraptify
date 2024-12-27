@@ -1,6 +1,6 @@
 import Navbar from '@/components/blocks/navbar'
 import { Container } from 'ui'
-import Link from 'next/link'
+import { Footer } from '@/components/blocks/footer'
 
 export default function MainLayout({
   children,
@@ -13,18 +13,7 @@ export default function MainLayout({
         <Navbar />
         {children}
       </div>
-      <div className="text-muted-foreground container mb-8 text-sm">
-        Built by&nbsp;
-        <Link
-          href="https://github.com/abdrhmniqbal"
-          passHref
-          className="text-blue-500 underline hover:text-blue-700"
-          target="blank"
-        >
-          Iqbal Abdurrahman
-        </Link>
-        .
-      </div>
+      <Footer />
     </Container>
   )
 }
