@@ -23,7 +23,6 @@ export function TopSongs({ session }: { session: Session }) {
   const [timePeriod, setTimePeriod] = useState(
     searchParams.get('time_period') || 'short_term',
   )
-  console.log(session)
 
   useEffect(() => {
     if (session) {

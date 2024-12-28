@@ -6,7 +6,7 @@ interface HeaderProps {
 }
 export default function PageHeader({ title, description }: HeaderProps) {
   return (
-    <div className="pt-6 pb-8 lg:pb-0">
+    <div className="flex flex-col space-y-2 pt-6 pb-8 lg:pb-0">
       <Heading level={1} className="text-4xl sm:text-4xl md:text-5xl">
         {title}
       </Heading>
