@@ -13,9 +13,9 @@ export function LoginForm() {
       <Card.Header>
         <Card.Title>Login</Card.Title>
         <Card.Description>Login to your account</Card.Description>
-        <Note intent="warning">
-          Wraptify is currently on beta phase. Join waitlist to get an early
-          access.
+        <Note intent="warning" className="mt-2">
+          Wraptify is in it&apos;s beta phase, and access may be temporarily
+          unavailable. Thank you for your patience!
         </Note>
       </Card.Header>
       <Card.Content>

@@ -1,5 +1,10 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with
-[`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Wraptify
+
+Wraptify is a free and open source website that allows you to wrap your spotify
+without waiting end of the year.
+
+(currently on development stage, extension request proposal is not yet
+accepted).
 
 ## Getting Started
 
