@@ -8,7 +8,7 @@ export default async function Generate() {
     <>
       <PageHeader
         title="Top artists"
-        description="Wrap your top songs at certain period"
+        description="Wrap your top artists at certain period"
       />
       <TopArtists session={session!} />
     </>

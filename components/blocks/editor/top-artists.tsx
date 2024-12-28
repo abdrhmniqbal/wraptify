@@ -7,6 +7,7 @@ import getTopItems from '@/lib/services/get-top-items'
 import TopArtistsFrame from '@/components/blocks/frame/top-artists'
 import { TimePeriod, type Artist } from '@/types/api'
 import TopItemsEditor from '@/components/blocks/editor/top-items'
+import { Note } from '@/components/ui'
 
 export function TopArtists({ session }: { session: Session }) {
   const searchParams = useSearchParams()
@@ -32,13 +33,20 @@ export function TopArtists({ session }: { session: Session }) {
   }, [timePeriod, session])
 
   return (
-    <div className="mt-8 grid grid-cols-1 gap-6 gap-y-12 pb-40 lg:grid-cols-2 lg:pb-6">
-      <TopItemsEditor items={artistsList} />
-      <TopArtistsFrame
-        artists={artistsList!}
-        bgColor={bgColor!}
-        textColor={textColor!}
-      />
-    </div>
+    <>
+      {artistsList && artistsList.length < 5 && (
+        <Note intent="warning" className="mt-4">
+          Not enough data available to display.
+        </Note>
+      )}
+      <div className="mt-8 grid grid-cols-1 gap-6 gap-y-12 pb-40 lg:grid-cols-2 lg:pb-6">
+        <TopItemsEditor items={artistsList} />
+        <TopArtistsFrame
+          artists={artistsList!}
+          bgColor={bgColor!}
+          textColor={textColor!}
+        />
+      </div>
+    </>
   )
 }

@@ -5,7 +5,7 @@ import Spotify from '@/components/icons/spotify'
 import type { Track } from '@/types/api'
 
 interface TopSongsFrameProps {
-  songs: Track[]
+  songs?: Track[]
   bgColor: string
   textColor: string
 }
@@ -20,10 +20,10 @@ const TopSongsFrame = ({ songs, bgColor, textColor }: TopSongsFrameProps) => {
       >
         {songs ? (
           <>
-            <div className="px-6 py-14">
+            <div className="h-[476px] px-6 py-14">
               <div className={`text-xl font-bold`}>My Top Songs</div>
               <div className="mt-6 flex flex-col items-center justify-center space-y-2">
-                {songs &&
+                {songs.length > 0 ? (
                   songs.map(({ name, artists, album }, index: number) => (
                     <div
                       className={`flex w-full items-center justify-center space-x-2`}
@@ -55,7 +55,10 @@ const TopSongsFrame = ({ songs, bgColor, textColor }: TopSongsFrameProps) => {
                         </span>
                       </div>
                     </div>
-                  ))}
+                  ))
+                ) : (
+                  <div className="text-sm">No data found.</div>
+                )}
               </div>
             </div>
             <div className="flex w-full items-center justify-between px-4">

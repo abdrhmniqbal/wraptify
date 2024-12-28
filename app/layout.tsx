@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Wraptify - Wrap Your Spotify Anytime You Want!',
+  title: 'Wraptify - Wrap Your Spotify!',
   description:
     'The ultimate way to wrap your spotify without waiting end of the year.',
 }
