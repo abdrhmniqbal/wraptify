@@ -1,7 +1,7 @@
 import PageHeader from '@/components/blocks/page-header'
 import WrapTypeCard from '@/components/blocks/wrap-type-card'
 import { auth } from '@/lib/auth'
-import { MusicNote03Icon } from 'hugeicons-react'
+import { MusicNote03Icon, UserMultiple02Icon } from 'hugeicons-react'
 
 export default async function Generate() {
   const session = await auth()
@@ -12,6 +12,13 @@ export default async function Generate() {
       href: '/generate/top-songs',
       query: { time_period: 'short_term' },
       icon: MusicNote03Icon,
+    },
+    {
+      title: 'Top Artists',
+      description: 'Wrap your top artists at certain period.',
+      href: '/generate/top-artists',
+      query: { time_period: 'short_term' },
+      icon: UserMultiple02Icon,
     },
   ]
   return (
