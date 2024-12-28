@@ -9,13 +9,12 @@ export const { auth, handlers } = NextAuth({
     }),
   ],
   callbacks: {
-    async jwt({ token, account, user }) {
-      if (account && user) {
+    async jwt({ token, account }) {
+      if (account) {
         return {
           access_token: account.access_token,
           refresh_token: account.refresh_token,
           access_token_expires: account.expires_at! * 1000,
-          user,
         }
       }
       if (

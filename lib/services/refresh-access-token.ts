@@ -3,7 +3,7 @@ import type { JWT } from 'next-auth/jwt'
 async function refreshAccessToken(token: JWT) {
   try {
     const basicAuth = Buffer.from(
-      `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`,
+      `${process.env.AUTH_SPOTIFY_ID}:${process.env.AUTH_SPOTIFY_SECRET}`,
     ).toString('base64')
 
     const response = await fetch('https://accounts.spotify.com/api/token', {
@@ -30,10 +30,8 @@ async function refreshAccessToken(token: JWT) {
       access_token_expires: Date.now() + data.expires_in * 1000,
     }
   } catch (error) {
-    return {
-      ...token,
-      error,
-    }
+    console.error('Failed to refresh token', error)
+    throw error
   }
 }
 
