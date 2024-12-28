@@ -1,12 +1,11 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck
 import { AspectRatio, Loader } from 'ui'
 import Image from 'next/image'
 import WrapFrame from '@/components/blocks/wrap-frame'
 import Spotify from '@/components/icons/spotify'
+import type { Track } from '@/types/api'
 
 interface TopSongsFrameProps {
-  songs: unknown
+  songs: Track[]
   bgColor: string
   textColor: string
 }

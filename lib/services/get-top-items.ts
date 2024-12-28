@@ -1,9 +1,10 @@
 import fetchWebApi from '@/lib/services/fetch-web-api'
+import type { TimePeriod } from '@/types/api'
 
 async function getTopItems(
   token: string,
-  type: string,
-  timeRange: string,
+  type: 'tracks' | 'artists',
+  timeRange: TimePeriod,
   limit: number,
 ) {
   return (

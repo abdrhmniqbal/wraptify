@@ -30,5 +30,6 @@ export * from './popover';
 export * from './primitive'
 export * from './primitive'
 export * from './select';
+export * from './separator';
 export * from './text-field'
 export * from './toast'
