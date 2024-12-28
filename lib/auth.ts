@@ -1,5 +1,6 @@
 import refreshAccessToken from '@/lib/services/refresh-access-token'
 import NextAuth from 'next-auth'
+import type { AdapterUser } from 'next-auth/adapters'
 import Spotify from 'next-auth/providers/spotify'
 
 export const { auth, handlers } = NextAuth({
@@ -9,12 +10,13 @@ export const { auth, handlers } = NextAuth({
     }),
   ],
   callbacks: {
-    async jwt({ token, account }) {
-      if (account) {
+    async jwt({ token, account, user }) {
+      if (account && user) {
         return {
           access_token: account.access_token,
           refresh_token: account.refresh_token,
           access_token_expires: account.expires_at! * 1000,
+          user,
         }
       }
       if (
@@ -28,6 +30,8 @@ export const { auth, handlers } = NextAuth({
     },
     async session({ session, token }) {
       session.accessToken = token.access_token as string
+      session.user = token.user as AdapterUser
+      console.log('session', session)
       return session
     },
   },
