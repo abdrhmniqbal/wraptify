@@ -31,7 +31,6 @@ export const { auth, handlers } = NextAuth({
     async session({ session, token }) {
       session.accessToken = token.access_token as string
       session.user = token.user as AdapterUser
-      console.log('session', session)
       return session
     },
   },
