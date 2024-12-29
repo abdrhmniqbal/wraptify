@@ -18,7 +18,7 @@ const TopArtistsFrame = ({
   return (
     <WrapFrame>
       <div
-        id="top_songs"
+        id="top_artists"
         className="h-full w-full"
         style={{ backgroundColor: bgColor, color: textColor }}
       >
