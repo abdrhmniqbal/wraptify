@@ -1,8 +1,8 @@
 import { AspectRatio, Loader } from 'ui'
 import Image from 'next/image'
 import WrapFrame from '@/components/blocks/wrap-frame'
-import Spotify from '@/components/icons/spotify'
 import type { Artist } from '@/types/api'
+import Watermark from '@/components/blocks/watermark'
 
 interface TopArtistsFrameProps {
   artists?: Artist[]
@@ -66,10 +66,7 @@ const TopArtistsFrame = ({
             <Loader className="size-8" />
           </div>
         )}
-        <div className="flex w-full items-center justify-between px-4">
-          <Spotify width="76px" height="22px" fill={textColor} />
-          <div className="text-sm font-semibold">{`s.id/wraptify`}</div>
-        </div>
+        <Watermark textColor={textColor} />
       </div>
     </WrapFrame>
   )
